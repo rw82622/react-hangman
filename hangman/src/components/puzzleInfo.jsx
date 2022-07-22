@@ -53,20 +53,21 @@ const PuzzleInfo = ({ puzzle, guessedLetters, setGuessedLetters }) => {
                 ))}
                 </h3>
                 {guessedLetters.length > 0 &&
-                    <h3>Wrong Guesses: {guessedLetters.map((l, index) => (
+                    <h3 className='wordHistory'>Wrong Guesses: {guessedLetters.map((l, index) => (
                         <span key={index}>{l} </span>
                     ))}</h3>
                 }
             </div>
             <div className="attemptsLeft">
-                <h4>You have {remainingAttempts} guesses remaining.</h4>
+                <h4>You have <span className='red'>                    {remainingAttempts}</span> guess{remainingAttempts === 1 ? <span></span> : <span>es</span>} remaining.
+                </h4>
             </div>
             <hr />
             <InputForm
                 encryptPuzzle={encryptPuzzle}
                 userInput={userInput}
             />
-            <div>
+            <div className='feedback'>
                 <h4>{feedback}</h4>
             </div>
         </div>

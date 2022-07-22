@@ -36,3 +36,15 @@
 .encryptedWord {
   padding: 10px;
 }
+
+.feedback {
+  padding-top: 10px
+}
+
+.red {
+  color: red;
+}
+
+.wordHistory {
+  padding-top: 10px
+}
