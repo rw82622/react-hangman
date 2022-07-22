@@ -11,8 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>HANGMAN!</h1>
-      <hr />
+      <h1 className='header'>HANGMAN!</h1>
       <PuzzleInfo 
         puzzle={puzzle} 
         guessedLetters={guessedLetters}

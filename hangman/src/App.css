@@ -1,3 +1,38 @@
 .App {
   text-align: center;
+  margin: 100px auto;
+  padding-bottom: 2%;
+  background-color: #d7d7d8;
+  width: 50%;
+}
+
+.inputForm {
+  margin-top: 5%;
+}
+
+#char {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgb(0, 123, 255);
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+}
+
+.inputForm button {
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.header {
+  background-color: grey;
+  padding: 20px
+}
+
+.attemptsLeft {
+  padding: 5px;
+}
+
+.encryptedWord {
+  padding: 10px;
 }

@@ -47,8 +47,7 @@ const PuzzleInfo = ({ puzzle, guessedLetters, setGuessedLetters }) => {
 
     return (
         <div>
-            <div>
-                <h3>{puzzle}</h3>
+            <div className='encryptedWord'>
                 <h3>{puzzleEncrypted.map((c, index) => (
                     <span key={index}>{c} </span>
                 ))}
@@ -59,7 +58,7 @@ const PuzzleInfo = ({ puzzle, guessedLetters, setGuessedLetters }) => {
                     ))}</h3>
                 }
             </div>
-            <div>
+            <div className="attemptsLeft">
                 <h4>You have {remainingAttempts} guesses remaining.</h4>
             </div>
             <hr />
