@@ -3,18 +3,14 @@ import { useState, useRef } from 'react'
 import InputForm from './inputForm';
 
 
-
 const PuzzleInfo = ({ puzzle, guessedLetters, setGuessedLetters }) => {
 
-    let wordEncrypted = puzzle.replace(/\w/g, "_")
-    wordEncrypted = wordEncrypted.split('')
+    let wordEncrypted = puzzle.replace(/\w/g, "_").split('')
 
     const [puzzleEncrypted, setPuzzleEncrypted] = useState(wordEncrypted)
     const [remainingAttempts, setRA] = useState(6)
     const [feedback, setFeedback] = useState('')
     const userInput = useRef()
-
-
 
     const checkValue = (myLetter) => {
         let msg
