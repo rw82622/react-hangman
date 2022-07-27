@@ -24,10 +24,6 @@ const PuzzleInfo = ({ puzzle, guessedLetters, setGuessedLetters }) => {
             setGuessedLetters([...guessedLetters, myLetter])
             msg = `Sorry! The letter ${myLetter} is not in the word.`
             setRA(remainingAttempts - 1)
-            if (remainingAttempts === 1) {
-                alert('Game Over')
-                window.location.reload()
-            }
         }
         return msg
     }
@@ -47,29 +43,60 @@ const PuzzleInfo = ({ puzzle, guessedLetters, setGuessedLetters }) => {
 
     return (
         <div>
-            <div className='encryptedWord'>
-                <h3>{puzzleEncrypted.map((c, index) => (
-                    <span key={index}>{c} </span>
-                ))}
-                </h3>
-                {guessedLetters.length > 0 &&
-                    <h3 className='wordHistory'>Wrong Guesses: {guessedLetters.map((l, index) => (
-                        <span key={index}>{l} </span>
-                    ))}</h3>
-                }
-            </div>
-            <div className="attemptsLeft">
-                <h4>You have <span className='red'>                    {remainingAttempts}</span> guess{remainingAttempts === 1 ? <span></span> : <span>es</span>} remaining.
-                </h4>
-            </div>
-            <hr />
-            <InputForm
-                encryptPuzzle={encryptPuzzle}
-                userInput={userInput}
-            />
-            <div className='feedback'>
-                <h4>{feedback}</h4>
-            </div>
+            {guessedLetters.length < 6 ?
+                <div>
+                    {puzzle === puzzleEncrypted.join("") ?
+                        <div>
+                            <h2> Congrats Player! You Won!</h2>
+                            <button
+                                className='btn btn-primary'
+                                onClick={() => window.location.reload()} >Restart
+                            </button>
+                        </div>
+                        :
+                        <div>
+                            <p>{puzzle}</p>
+                            <div className='encryptedWord'>
+                                <h3>{puzzleEncrypted.map((c, index) => (
+                                    <span key={index}>{c} </span>
+                                ))}
+                                </h3>
+                                {guessedLetters.length > 0 &&
+                                    <h3 className='wordHistory'>Wrong Guesses: {guessedLetters.map((l, index) => (
+                                        <span key={index}>{l} </span>
+                                    ))}
+                                    </h3>
+                                }
+                            </div>
+                            <div className="attemptsLeft">
+                                <h4>You have <span className='red'>{remainingAttempts}</span> guess{remainingAttempts === 1 ? <span></span> : <span>es</span>} remaining.
+                                </h4>
+                            </div>
+                            <hr />
+                            <InputForm
+                                puzzle={puzzle}
+                                encryptPuzzle={encryptPuzzle}
+                                userInput={userInput}
+                                puzzleEncrypted={puzzleEncrypted}
+                            />
+                            <div className='feedback'>
+                                <h4>{feedback}</h4>
+                            </div>
+                        </div>
+                    }
+                </div>
+                :
+                <div>
+                    <h2>Game Over!</h2>
+                    <h3>Correct Word: {puzzle}</h3>
+                    <h3>Your Guess: {puzzleEncrypted.map((item, index) => <span key={index}>{item} </span>)}</h3>
+                    <h3>Your Wrong Letters: {guessedLetters}</h3>
+                    <button
+                        className='btn btn-primary'
+                        onClick={() => window.location.reload()} >Restart
+                    </button>
+                </div>
+            }
         </div>
     )
 }

@@ -12,11 +12,11 @@ function App() {
   return (
     <div className="App">
       <h1 className='header'>HANGMAN!</h1>
-      <PuzzleInfo 
-        puzzle={puzzle} 
-        guessedLetters={guessedLetters}
-        setGuessedLetters={setGuessedLetters}
-      />
+        <PuzzleInfo 
+          puzzle={puzzle} 
+          guessedLetters={guessedLetters}
+          setGuessedLetters={setGuessedLetters}
+        />
     </div>
   );
 }
