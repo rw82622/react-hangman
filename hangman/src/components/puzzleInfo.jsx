@@ -55,7 +55,6 @@ const PuzzleInfo = ({ puzzle, guessedLetters, setGuessedLetters }) => {
                         </div>
                         :
                         <div>
-                            <p>{puzzle}</p>
                             <div className='encryptedWord'>
                                 <h3>{puzzleEncrypted.map((c, index) => (
                                     <span key={index}>{c} </span>
