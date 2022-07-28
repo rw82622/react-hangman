@@ -1,3 +1,8 @@
+body {
+  background: rgb(54, 217, 182);
+  background: linear-gradient(90deg, rgba(54, 217, 182, 1) 0%, rgba(32, 152, 126, 1) 43%, rgba(0, 212, 255, 1) 100%);
+}
+
 .App {
   text-align: center;
   margin: 100px auto;
@@ -13,7 +18,7 @@
 #char {
   width: 50px;
   height: 50px;
-  border: 4px solid rgb(0, 123, 255);
+  border: 4px solid rgba(32, 152, 126, 1);
   font-size: 30px;
   text-align: center;
   justify-content: center;
@@ -22,6 +27,7 @@
 .inputForm button {
   margin-top: 20px;
   padding: 15px;
+  background-color: rgba(0, 212, 255, 1);
 }
 
 .header {

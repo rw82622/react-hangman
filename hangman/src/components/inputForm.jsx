@@ -16,7 +16,7 @@ const InputForm = ({ puzzle, encryptPuzzle, userInput, puzzleEncrypted }) => {
                     maxLength={1}
                     required />
                 <div>
-                    <button className='btn btn-primary'>Submit</button>
+                    <button className='btn'>Submit</button>
                 </div>
             </form>
         </div>
